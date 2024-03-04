@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { sanityClient } from 'sanity:client';
 import type { AboutType } from '../types/schema';
 import imageUrlBuilder from '@sanity/image-url';
-import Button from '../components/button.astro';
+import Button from './button.astro';
 
 const builder = imageUrlBuilder(sanityClient);
 

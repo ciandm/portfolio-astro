@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/base-head.astro';
-import ExperienceSection from '../components/experience-section.astro';
+import Experience from '../components/experience.astro';
 import Footer from '../components/footer.astro';
-import HeroSection from '../components/hero-section.astro';
+import Hero from '../components/hero.astro';
 import Projects from '../components/projects.astro';
 import { PAGE_DESCRIPTION, PAGE_TITLE } from '../constants.ts';
 import BaseLayout from '../layouts/base-layout.astro';
@@ -14,8 +14,8 @@ import BaseLayout from '../layouts/base-layout.astro';
       <BaseHead title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
     </head>
     <body>
-      <HeroSection />
-      <ExperienceSection />
+      <Hero />
+      <Experience />
       <Projects />
       <Footer />
     </body>
