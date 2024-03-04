@@ -1,0 +1,28 @@
+---
+import { sanityClient } from 'sanity:client';
+import type { ExperienceType } from '../types/schema';
+import ExperienceDetail from './experience-detail.astro';
+
+const experiences = await sanityClient.fetch<ExperienceType[]>(
+  `*[_type == "experience"] | order(to desc)`
+);
+---
+
+<section class='bg-white py-24'>
+  <div class='mx-auto max-w-3xl px-6 lg:px-8'>
+    <h1 class='text-3xl font-bold tracking-tight text-gray-900 mb-8'>
+      My experience in detail
+    </h1>
+    <ul role='list' class="'-mb-8">
+      {
+        experiences.map((experience, index) => (
+          <ExperienceDetail
+            experience={experience}
+            isLast={index === experiences.length - 1}
+            isFirst={index === 0}
+          />
+        ))
+      }
+    </ul>
+  </div>
+</section>
