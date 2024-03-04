@@ -6,3 +6,19 @@ export type ExperienceType = {
   to: string;
   description: string[];
 };
+
+export type ProjectType = {
+  title: string;
+  description: string;
+  tech: string[];
+  links: {
+    label: string;
+    href: string;
+  }[];
+  tag?: string;
+};
+
+export type AboutType = {
+  introduction: string;
+  imageUrl: string;
+};
