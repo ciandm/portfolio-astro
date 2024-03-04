@@ -1,0 +1,15 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag;
+  variant?: 'primary' | 'secondary';
+}>;
+
+const { as: Tag = 'button', variant = 'primary', ...rest } = Astro.props;
+const componentClasses = `${variant === 'primary' ? 'bg-green-600 hover:bg-green-700 focus-visible:outline-green-600 text-white' : 'text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100'} rounded-md px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`;
+---
+
+<Tag {...rest} class:list={[componentClasses, rest.class]}>
+  <slot />
+</Tag>
