@@ -1,5 +1,15 @@
 ---
 import '@fontsource-variable/inter';
+
+import BaseHead from '../components/base-head.astro';
+import { PAGE_DESCRIPTION, PAGE_TITLE } from '../constants.ts';
 ---
 
-<slot />
+<html lang='en' class='h-full'>
+  <head>
+    <BaseHead title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+  </head>
+  <body class='h-full'>
+    <slot />
+  </body>
+</html>

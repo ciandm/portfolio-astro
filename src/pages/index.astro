@@ -1,23 +1,14 @@
 ---
-import BaseHead from '../components/base-head.astro';
 import Experience from '../components/experience.astro';
 import Footer from '../components/footer.astro';
 import Hero from '../components/hero.astro';
 import Projects from '../components/projects.astro';
-import { PAGE_DESCRIPTION, PAGE_TITLE } from '../constants.ts';
 import BaseLayout from '../layouts/base-layout.astro';
 ---
 
 <BaseLayout>
-  <html lang='en'>
-    <head>
-      <BaseHead title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-    </head>
-    <body>
-      <Hero />
-      <Experience />
-      <Projects />
-      <Footer />
-    </body>
-  </html>
+  <Hero />
+  <Experience />
+  <Projects />
+  <Footer />
 </BaseLayout>
